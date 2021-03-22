@@ -5,8 +5,8 @@
 		http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-    <bean id="myBeanFactoryPostProcessor" class="sun.study.note.demo1.factorypostprocessor.MyBeanFactoryPostProcessor"/>
-    <bean id="user" class="sun.study.note.demo1.pojo.User">
+    <bean id="myBeanFactoryPostProcessor" class="sun.study.note.src.pojo.factorypostprocessor.MyBeanFactoryPostProcessor"/>
+    <bean id="user" class="sun.study.note.src.pojo.User">
         <property name="name" value="sunzhen"/>
         <property name="age" value="30"/>
     </bean>
