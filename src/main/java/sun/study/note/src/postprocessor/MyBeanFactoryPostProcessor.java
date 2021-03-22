@@ -1,4 +1,4 @@
-package sun.study.note.demo1.factorypostprocessor;
+package sun.study.note.src.postprocessor;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;

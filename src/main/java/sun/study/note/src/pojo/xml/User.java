@@ -1,4 +1,4 @@
-package sun.study.note.src.pojo;
+package sun.study.note.src.pojo.xml;
 
 import lombok.Getter;
 import lombok.Setter;
