@@ -1,10 +1,11 @@
 package sun.study.note.src.annoctx;
 
-import javafx.scene.media.SubtitleTrack;
 import org.junit.Test;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotatedBeanDefinitionReader;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import sun.study.note.src.pojo.anno.StudentMapper;
 import sun.study.note.src.pojo.anno.StudentService;
 
@@ -18,6 +19,14 @@ import java.util.Map;
 public class AnnoAppCtxTest {
 
     @Test
+    public void test2() {
+        ApplicationContext context = new AnnotationConfigApplicationContext(StudentService.class,StudentMapper.class);
+        StudentService studentService = context.getBean("studentService", StudentService.class);
+        System.out.println(studentService);
+
+    }
+
+        @Test
     public void test1(){
 
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();

@@ -1,7 +1,5 @@
 package sun.study.note.src.pojo.xml;
 
-import lombok.Getter;
-import lombok.Setter;
 import lombok.ToString;
 
 /**
@@ -11,16 +9,16 @@ import lombok.ToString;
  */
 @ToString
 
-public class User {
+public class AnotherUser {
     private String name;
     private int age;
 
-    public User() {
-        System.out.println("User实例化");
+    public AnotherUser() {
+        System.out.println("AnotherUser");
     }
 
     public void setName(String name) {
-        System.out.println("user name赋值操作");
+        System.out.println("AnotherUser name赋值操作");
         this.name = name;
     }
 
@@ -29,7 +27,7 @@ public class User {
     }
 
     public void setAge(int age) {
-        System.out.println("user age赋值操作");
+        System.out.println("AnotherUser age赋值操作");
         this.age = age;
     }
 
@@ -38,18 +36,18 @@ public class User {
     }
 
     public void initMethod() {
-        System.out.println("initMethod");
+        System.out.println("AnotherUser initMethod");
         System.out.println(this);
-        name = "亚历山大";
-        age = 1234;
+        name = "AnotherUser";
+        age = 111;
 
     }
 
-    public void init_method(){
-        System.out.println("user_init");
+    public void init_method() {
+        System.out.println("AnotherUser init_method");
         System.out.println(this);
-        name = "凯撒大帝";
-        age = 3456;
+        name = "AnotherUser";
+        age = 111;
 
     }
 }

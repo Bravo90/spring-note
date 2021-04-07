@@ -5,8 +5,16 @@
 		http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="myBeanFactoryPostProcessor" class="sun.study.note.src.postprocessor.MyBeanFactoryPostProcessor"/>
+
+    <bean id="myBeanPostProcessor" class="sun.study.note.src.postprocessor.MyBeanPostProcessor"/>
+
     <bean id="user" class="sun.study.note.src.pojo.xml.User">
         <property name="name" value="sunzhen"/>
         <property name="age" value="30"/>
     </bean>
+    <bean id="anotherUser" class="sun.study.note.src.pojo.xml.AnotherUser">
+        <property name="name" value="sunzhen"/>
+        <property name="age" value="30"/>
+    </bean>
+
 </beans>
