@@ -16,11 +16,11 @@ public class User {
     private int age;
 
     public User() {
-        System.out.println("User实例化");
+        System.out.println("调用User的构造方法");
     }
 
     public void setName(String name) {
-        System.out.println("user name赋值操作");
+        System.out.println("user#setName(String)");
         this.name = name;
     }
 
@@ -29,7 +29,7 @@ public class User {
     }
 
     public void setAge(int age) {
-        System.out.println("user age赋值操作");
+        System.out.println("user#setAge(int)");
         this.age = age;
     }
 

@@ -121,8 +121,13 @@ public class XmlAppCtxTest {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext();
         context.setConfigLocation("spring-demo1.xml");
         context.refresh();
-        String[] beanNamesForType = context.getBeanFactory().getBeanNamesForType(BeanFactoryPostProcessor.class, true, false);
-        System.out.println(new ArrayList<>(Arrays.asList(beanNamesForType)));
+
+
+        User bean1 = context.getBean(User.class);
+        System.out.println(bean1);
+        User bean2 = context.getBean(User.class);
+        System.out.println(bean2);
+        System.out.println(bean1 == bean2);
     }
 
 }

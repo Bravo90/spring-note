@@ -8,11 +8,11 @@
 
     <bean id="myBeanPostProcessor" class="sun.study.note.src.postprocessor.MyBeanPostProcessor"/>
 
-    <bean id="user" class="sun.study.note.src.pojo.xml.User">
+    <bean id="user" class="sun.study.note.src.pojo.xml.User" >
         <property name="name" value="sunzhen"/>
         <property name="age" value="30"/>
     </bean>
-    <bean id="anotherUser" class="sun.study.note.src.pojo.xml.AnotherUser">
+    <bean id="anotherUser" class="sun.study.note.src.pojo.xml.AnotherUser" scope="prototype">
         <property name="name" value="sunzhen"/>
         <property name="age" value="30"/>
     </bean>
