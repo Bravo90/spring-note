@@ -1,20 +1,19 @@
-package sun.study.note.src.xmlctx;
+package sun.study.note.src.testxmlctx;
 
 import org.junit.Test;
 import org.springframework.beans.factory.config.BeanDefinition;
-import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import sun.study.note.src.pojo.Demo;
+import org.springframework.core.env.Environment;
+import org.springframework.core.env.StandardEnvironment;
+import org.springframework.util.StringValueResolver;
 import sun.study.note.src.pojo.xml.User;
 import sun.study.note.src.pojo.xml.UserMapper;
 import sun.study.note.src.pojo.xml.UserService;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * AppTest
@@ -48,14 +47,14 @@ public class XmlAppCtxTest {
 
         context.refresh();
 
-        Demo demo = new Demo();
-        demo.setName("demo");
-        demo.setNum(123);
+        ConfigurableListableBeanFactory beanFactory = context.getBeanFactory();
 
-        context.getBeanFactory().registerSingleton("demo",demo);
-
-        Demo user1 = context.getBean("demo", Demo.class);
-        System.out.println(user1);
+         beanFactory.addEmbeddedValueResolver(new StringValueResolver() {
+             @Override
+             public String resolveStringValue(String strVal) {
+                 return  context.getEnvironment().resolvePlaceholders(strVal);
+             }
+         });
     }
 
     @Test
@@ -121,8 +120,17 @@ public class XmlAppCtxTest {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext();
         context.setConfigLocation("spring-demo1.xml");
         context.refresh();
-        String[] beanNamesForType = context.getBeanFactory().getBeanNamesForType(BeanFactoryPostProcessor.class, true, false);
-        System.out.println(new ArrayList<>(Arrays.asList(beanNamesForType)));
+
+        User myUser = context.getBean("user", User.class);
+        System.out.println(myUser);
+
+    }
+
+    @Test
+    public void test8(){
+
+        Environment environment = new StandardEnvironment();
+        String s = environment.resolvePlaceholders("");
     }
 
 }

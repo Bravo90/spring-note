@@ -17,16 +17,18 @@ public class MyBeanPostProcessor implements BeanPostProcessor , PriorityOrdered 
     }
 
     @Override
-    public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        System.out.println(">>>>>>>>>>>>>>>>>>>postProcessAfterInitialization");
+    public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
+        System.out.println("BeanPostProcessor --- Before");
         return null;
     }
 
     @Override
-    public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        System.out.println("postProcessBeforeInitialization<<<<<<<<<<<<<<<<<<<<<<<");
+    public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
+        System.out.println("BeanPostProcessor --- after");
         return null;
     }
+
+
 
     @Override
     public int getOrder() {

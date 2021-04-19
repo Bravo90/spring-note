@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="lessonBeanPostProcessor" class="sun.study.note.src.extend.LessonBeanPostProcessor"/>
+
+    <bean id="lessonSmartInitializingSingleton" class="sun.study.note.src.extend.LessonSmartInitializingSingleton"/>
+
+    <bean id="lessonInstantiationAwareBeanPostProcessor"
+          class="sun.study.note.src.extend.LessonInstantiationAwareBeanPostProcessor"/>
+
+    <bean id="destoryBeanPostProcessor" class="sun.study.note.src.extend.DestoryBeanPostProcessor"/>
+
+    <bean id="lesson" class="sun.study.note.src.extend.Lesson1">
+        <property name="name" value="Java"/>
+        <property name="lessonCount" value="20"/>
+        <property name="description" value="从入门到放弃"/>
+    </bean>
+
+    <!--<bean id="lesson4" class="sun.study.note.src.extend.Lesson1">
+        <constructor-arg name="name" value="Python入门"/>
+        <constructor-arg name="lessonCount" value="100"/>
+        <constructor-arg name="description" value="放弃入门"/>
+    </bean>-->
+
+    <!--<bean id="lesson1" class="sun.study.note.src.extend.Lesson1"/>
+
+    <bean id="lesson2" parent="lesson1">
+        <property name="name" value="Java"/>
+        <property name="lessonCount" value="20"/>
+    </bean>
+
+    <bean id="lesson3" parent="lesson2">
+        <property name="description" value="从入门到放弃"/>
+    </bean>-->
+</beans>
